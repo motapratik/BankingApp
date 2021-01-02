@@ -1,17 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"net/http"
-)
+import "github.com/motapratik/BankingApp/app"
 
 func main() {
-	http.HandleFunc("/hello", greeting)
-
-	log.Fatal(http.ListenAndServe("localhost:8000", nil))
-}
-
-func greeting(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello")
+	app.Start()
 }
